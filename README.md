@@ -28,7 +28,9 @@ This project relies on industry-standard virtualization and Microsoft server tec
 The infrastructure utilizes a centralized, flat network design tailored for a small business environment. All internal systems connect through a primary network switch, which links back to a gateway router (`192.168.1.1`) to provide secure external internet access.
 To simulate a real corporate setting, the network includes a dedicated management workstation for administrators alongside separate domain-joined client PCs representing core business departments: Human Resources, Finance, Sales, and Information Technology.
 
-PIIICTURE
+<p align="center">
+  <img src="./Resources/diagram.jpg" alt="Network-Topology" width="35%">
+</p>
 
 ## Active Directory OU Structure
 
@@ -41,7 +43,9 @@ The structure is broken down into four core categories:
 *   **Workstations OU:** Subdivided by department to ensure that computer-specific Group Policies (GPOs) are only applied to the correct machines.
 *   **Disabled Users OU:** A staging environment used as a security best practice for offboarding, isolating accounts that are deactivated or scheduled for removal.
 
-PICCTUREEE
+<p align="center">
+  <img src="./Resources/OUs.jpg" alt="OU-Structure" width="35%">
+</p>
 
 ## Group Policy Objects (GPOs)
 
