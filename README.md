@@ -53,7 +53,7 @@ The following policies are implemented to secure the network, protect company da
 
 | GPO Name (Full Walkthrough) | Targeted Scope | Description & Business Reason |
 | :--- | :--- | :--- |
-| [Password Policy](./gpo/01-password-policy.md) | Domain-Wide | Enforces 12+ characters, complexity rules, and an automatic account lockout after 5 failed attempts. |
+| [Password Policy](./04%20-%20Group-Policy/01-password-policy.md) | Domain-Wide | Enforces 12+ characters, complexity rules, and an automatic account lockout after 5 failed attempts. |
 | [Screen Lock Timeout](./gpo/02-screen-lock.md) | All Users | Automatically locks the workstation screen after 15 minutes of inactivity to protect unattended desks. |
 | [Interactive Logon Warning](./gpo/03-logon-warning.md) | Domain-Wide | Displays a legal warning banner before login stating that system activity is restricted and monitored. |
 | [Software Installation Block](./gpo/04-software-block.md) | Workstations OU | Prevents standard users from running unapproved installers to keep the network secure and malware-free. |
