@@ -57,10 +57,10 @@ The following policies are implemented to secure the network, protect company da
 | [Screen Lock Timeout](./04%20-%20Group-Policy/02-sceen-lock-timeout.md) | All Users | Automatically locks the workstation screen after 15 minutes of inactivity to protect unattended desks. |
 | [Interactive Logon Warning](./04%20-%20Group-Policy/03-interactive-logon-warning.md) | Domain-Wide | Displays a legal warning banner before login stating that system activity is restricted and monitored. |
 | [Software Installation Block](./04%20-%20Group-Policy/04-software-installation-block.md) | Workstations OU | Prevents standard users from running unapproved installers to keep the network secure and malware-free. |
-| [Disable CMD & PowerShell](./04%20-%20Group-Policy04%20-%20Group-Policy/05-disable-cmd-powershell.md) | Standard Users | Blocks command-line access for non-IT staff to stop unauthorized system exploration or script execution. |
+| [Disable CMD & PowerShell](./04%20-%20Group-Policy/05-disable-cmd-powershell.md) | Standard Users | Blocks command-line access for non-IT staff to stop unauthorized system exploration or script execution. |
 | [Remove "Run as Admin"](./04%20-%20Group-Policy/06-remove-run-as-admin.md) | Workstations OU | Suppresses local administrative escalation prompts for standard users to enforce strict least-privilege access. |
 | [USB Storage Block](./04%20-%20Group-Policy/07-usb-block.md) | Finance & HR OUs | Disables external USB mass storage devices to prevent data leakage of sensitive files or PII. |
-| [Control Panel Restriction](./04%20-%20Group-Policy04%20-%20Group-Policy/08-control-panel-restriction.md) | Sales OU | Restricts access to system settings to prevent accidental configuration changes by non-technical staff. |
+| [Control Panel Restriction](./04%20-%20Group-Policy/08-control-panel-restriction.md) | Sales OU | Restricts access to system settings to prevent accidental configuration changes by non-technical staff. |
 | [Company Wallpaper](./04%20-%20Group-Policy/09-company-wallpaper.md) | All Users | Sets a corporate background featuring an "Authorized Use Only" warning for branding and compliance. |
 | [Map Network Drives](./04%20-%20Group-Policy/10-map-network-drives.md) | HR, Finance, & Sales | Automatically mounts specific departmental network shares (H:\, F:\, S:\) based on user roles. |
 
