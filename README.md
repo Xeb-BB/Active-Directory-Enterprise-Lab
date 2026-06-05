@@ -129,7 +129,7 @@ The following table serves as an operational index of real-world issues encounte
 
 | Problem (Full Walkthrough) | Cause | Short Resolution |
 | :--- | :--- | :--- |
-| [1. Workstation Domain Join Failure](./troubleshooting/01-domain-join.md) | **DNS Misconfiguration** — Workstation pointed to public DNS instead of the Domain Controller. | Configured client network adapter to point solely to the DC's static IP. |
+| [1. Workstation Domain Join Failure](./08%20-%20Troubleshooting/01-domain-join-failure.md) | **DNS Misconfiguration** — Workstation pointed to public DNS instead of the Domain Controller. | Configured client network adapter to point solely to the DC's static IP. |
 | [2. GPO Changes Not Applying](./troubleshooting/02-gpo-failure.md) | **Targeting Mismatch** — GPO linked to Computer OU but contained User Configuration settings. | Relinked GPO to the correct User OU and ran `gpupdate /force`. |
 | [3. Missing Department Share Drives](./troubleshooting/03-missing-drives.md) | **GPO Security Filtering** — Workstations lacked read permissions to process the drive-mapping GPO. | Added "Domain Computers" with Read permissions to the GPO delegation tab. |
 | [4. Folder Access Denied After Promotion](./troubleshooting/05-access-denied.md) | **Stale Kerberos Token** — User's active Windows session didn't include the new group SID. | Had the user sign out and sign back in to issue a fresh Kerberos ticket. |
