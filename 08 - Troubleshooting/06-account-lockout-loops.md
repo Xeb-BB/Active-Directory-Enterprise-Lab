@@ -1,4 +1,4 @@
-# Troubleshooting Case Study #8: Persistent Account Lockout Loops
+# Troubleshooting Case Study #6: Persistent Account Lockout Loops
 
 This entry covers the diagnostic workflow, credential vault auditing, and remediation steps applied to track down and eliminate repeating user account lockouts caused by cached network credentials.
 
