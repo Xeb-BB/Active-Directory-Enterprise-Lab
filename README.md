@@ -136,8 +136,8 @@ The following table serves as an operational index of real-world issues encounte
 | [5. User Desktops Showing Black Screens](./08%20-%20Troubleshooting/05-desktop-black-screens.md) | **File Share Permissions** — GPO wallpaper path pointed to an inaccessible local admin folder. | Moved wallpaper file to the `SYSVOL` share so all domain users could read it. |
 | [6. Continuous Account Lockouts](./08%20-%20Troubleshooting/06-account-lockout-loops.md) | **Cached Credentials** — Stale password saved on a mapped drive or secondary device. | Located source machine via `LockoutStatus.exe` and cleared Credential Manager. |
 | [7. FSRM Blocking Legitimate Files](./08%20-%20Troubleshooting/07-blocking-files.md) | **Aggressive Pattern Matching** — Block rule caught files with double extensions (e.g., `.exe.pdf`). | Adjusted File Server Resource Manager rule to strictly match trailing `*.exe`. |
-| [8. IT Staff Blocked from CMD/PowerShell](./troubleshooting/08-it-lockout.md) | **GPO Scope Error** — Lockdown policy applied globally without an IT exclusion rule. | Modified GPO security filtering to Deny "Apply Group Policy" for the `GG_IT` group. |
-| [9. Workstation Trust Relationship Dropped](./troubleshooting/09-time-skew.md) | **Kerberos Time Skew** — Workstation system time drifted more than 5 minutes from the DC clock. | Re-synced DC clock to an external NTP source and forced client resync via `w32tm`. |
+| [8. IT Staff Blocked from CMD/PowerShell](./08%20-%20Troubleshooting/08-it-blocked.md) | **GPO Scope Error** — Lockdown policy applied globally without an IT exclusion rule. | Modified GPO security filtering to Deny "Apply Group Policy" for the `GG_IT` group. |
+| [9. Workstation Trust Relationship Dropped](./08%20-%20Troubleshooting/09-workstation-trust-dropped.md) | **Kerberos Time Skew** — Workstation system time drifted more than 5 minutes from the DC clock. | Re-synced DC clock to an external NTP source and forced client resync via `w32tm`. |
 
 ---
 
