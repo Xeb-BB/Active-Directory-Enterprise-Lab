@@ -38,7 +38,7 @@ Default Windows settings allow weak passwords and unlimited login attempts. This
 
 #### 1. Group Policy Management Editor Configuration
 This screenshot verifies the policy parameters as configured on the Primary Domain Controller (`DC01`).
-![Password Policy GPO Configuration](../images/gpo-password-config.png)
+<img src="images/password-rules.jpg" width="48%" /> <img src="images/lockout%20rules.jpg" width="48%" />
 
 #### 2. Client-Side Enforcement Verification (`net accounts`)
 Running `net accounts` on a domain workstation proves the local machine is pulling and enforcing the security policy.
