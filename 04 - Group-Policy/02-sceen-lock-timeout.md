@@ -26,12 +26,10 @@ Path: User Configuration > Policies > Administrative Templates > Control Panel >
 
 ---
 
-### Deployment Verification & Screenshots
+### Deployment Verification & Screenshot
 
-#### 1. Group Policy Management Editor Configuration
+Group Policy Management Editor Configuration
 This screenshot verifies the personalization parameters and time limits configured on the Primary Domain Controller (DC01).
-![Screen Lock GPO Configuration](../images/gpo-screenlock-config.png)
 
-#### 2. Client-Side Enforcement Verification
-Opening the local Screen Saver settings on a domain workstation shows the configurations greyed out and enforced with a message stating, "Some settings are managed by your organization."
-![Client Verification Output](../images/gpo-screenlock-client-verify.png)
+<img src="images/scrn-saver.jpg" width="70%" />
+
