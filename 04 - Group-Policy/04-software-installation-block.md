@@ -27,12 +27,12 @@ Path: Computer Configuration > Policies > Windows Settings > Security Settings >
 
 ---
 
-### Deployment Verification & Screenshots
+### Deployment Verification & Screenshot
 
-#### 1. Group Policy Management Editor Configuration
+Group Policy Management Editor Configuration
 This screenshot verifies the User Account Control behavior policies configured on the Primary Domain Controller (DC01).
-![Software Block GPO Configuration](../images/gpo-softwareblock-config.png)
 
-#### 2. Client-Side Enforcement Verification
-Attempting to run an unapproved `.exe` or `.msi` installation file on a standard client machine (e.g., `SALES-PC01`) instantly forces a secure desktop UAC prompt asking for administrative credentials, blocking the standard user from executing the file.
-![Client Verification Output](../images/gpo-softwareblock-client-verify.png)
+
+<img src="images/software-policy.jpg" width="70%" />
+
+
