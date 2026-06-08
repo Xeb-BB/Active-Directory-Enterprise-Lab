@@ -5,10 +5,24 @@ Right now, this lab uses a "flat network," meaning all computers are in the same
 Since I am currently an entry-level professional mastering core system administration, I can implement basic security controls right now without needing complex networking hardware:
 
 ### Utilizing Windows Defender Firewall
-* **The Goal:** Prevent a standard user machine (like `SALES-PC01`) from scanning or connecting to a sensitive machine (like `FIN-PC01`).
-* **The Fix:** I can use Group Policy Objects (GPOs) to centrally configure the built-in **Windows Defender Firewall with Advanced Security** across all client machines. By blocking inbound ICMP (ping) and local file-sharing ports between client workstations, machines are isolated from each other even if they sit on the same switch.
+#### The Goal: Prevent standard department workstations (like SALES-PC01 at 192.168.1.101) from scanning, pinging, or connecting to sensitive machines in other departments (like FIN-PC01 at 192.168.1.116), while still allowing communication within their own teams.
 
----
+The Fix: Create and link target Group Policy Objects (GPOs) directly to the department sub-OUs (SALES-PCs and FIN-PCs) under the parent Workstations OU. These GPOs centrally configure Windows Defender Firewall with Advanced Security across all client machines using three distinct rule sets:
+
+An Administrative Whitelist: Explicitly allows all inbound connections from the IT Admin PC (192.168.1.50) so IT staff can troubleshoot any machine seamlessly.
+
+Intra-Department Allowance: Uses specific IP ranges (192.168.1.101 - 192.168.1.115 for Sales) to allow teammates to communicate and ping each other locally.
+
+Cross-Department Block: Sets a blanket block on all incoming traffic originating from outside network blocks (e.g., blocking the Finance IP range on Sales machines and vice versa).
+
+<p align="center">
+  <img src="images/finance-internal.jpg" alt="internal-network" width="80%">
+</p>
+
+#### Results:
+<p align="center">
+  <img src="images/finance-internal.jpg" alt="internal-network" width="80%">
+</p>
 
 ## Entry-Level Reflection & Learning Mindset
 
