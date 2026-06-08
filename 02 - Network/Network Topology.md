@@ -4,13 +4,9 @@ Right now, this lab uses a "flat network," meaning all computers are in the same
 
 Since I am currently an entry-level professional mastering core system administration, I can implement basic security controls right now without needing complex networking hardware:
 
-### 1. Utilizing Windows Defender Firewall
+### Utilizing Windows Defender Firewall
 * **The Goal:** Prevent a standard user machine (like `SALES-PC01`) from scanning or connecting to a sensitive machine (like `FIN-PC01`).
 * **The Fix:** I can use Group Policy Objects (GPOs) to centrally configure the built-in **Windows Defender Firewall with Advanced Security** across all client machines. By blocking inbound ICMP (ping) and local file-sharing ports between client workstations, machines are isolated from each other even if they sit on the same switch.
-
-### 2. Eliminating Single Points of Failure
-* **The Goal:** Make sure the business doesn't stop if a single server crashes.
-* **The Fix:** The ultimate upgrade for this topology is adding a secondary Domain Controller (DC02). This creates redundancy, meaning if DC01 goes down for maintenance, DC02 automatically takes over so users can still log in and work.
 
 ---
 
