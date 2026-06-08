@@ -10,8 +10,14 @@ The lab is deployed using a physical **Star Topology**, where all endpoints, ser
 
 ### 1. The Core Services Engine (DC01)
 * **IP Address:** `192.168.1.10` (Static IP)
+<p align="center">
+  <img src="images/server-static.jpg" alt="Static-IP" width="90%">
+</p>
 * **Roles:** Active Directory Domain Services (AD DS), DNS Server, and DHCP Server.
 * **Function:** DC01 acts as the brain of the network. Because Active Directory relies completely on name resolution to find services, DC01 handles all local DNS queries. It also features a DHCP scope running from `192.168.1.100` to `192.168.1.200` to automatically hand out IP addresses to workstations as they boot up.
+<p align="center">
+  <img src="images/dhcp-scope.jpg" alt="DHCP" width="90%">
+</p>
 
 ### 2. The Network Perimeter & Management
 * **Home Router (`192.168.1.1`):** Acts as the default gateway, providing internet access and basic routing for the lab environment.
