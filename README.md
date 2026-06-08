@@ -60,7 +60,6 @@ The following policies are implemented to secure the network, protect company da
 | [Disable CMD & PowerShell](./04%20-%20Group-Policy/05-disable-cmd-powershell.md) | Standard Users | Blocks command-line access for non-IT staff to stop unauthorized system exploration or script execution. |
 | [USB Storage Block](./04%20-%20Group-Policy/07-usb-block.md) | Finance & HR OUs | Disables external USB mass storage devices to prevent data leakage of sensitive files or PII. |
 | [Control Panel Restriction](./04%20-%20Group-Policy/08-control-panel-restriction.md) | Sales OU | Restricts access to system settings to prevent accidental configuration changes by non-technical staff. |
-| [Company Wallpaper](./04%20-%20Group-Policy/09-company-wallpaper.md) | All Users | Sets a corporate background featuring an "Authorized Use Only" warning for branding and compliance. |
 | [Map Network Drives](./04%20-%20Group-Policy/10-map-network-drives.md) | HR, Finance, & Sales | Automatically mounts specific departmental network shares (H:\, F:\, S:\) based on user roles. |
 
 ---
