@@ -29,8 +29,8 @@ Path: Computer Configuration > Policies > Windows Settings > Security Settings >
 
 #### 1. Group Policy Management Editor Configuration
 This screenshot verifies the registry-level security policy options string inputs configured on the Primary Domain Controller (DC01).
-![Logon Warning GPO Configuration](../images/gpo-logonwarning-config.png)
+<img src="images/interactive-logon.jpg" width="70%" />
 
 #### 2. Client-Side Enforcement Verification
 A screenshot of the Windows desktop login screen on a domain endpoint, showing that the legal text block appears and requires the user to click "OK" before showing the credential prompt.
-![Client Verification Output](../images/gpo-logonwarning-client-verify.png)
+<img src="images/result-logon.jpg" width="90%" />
