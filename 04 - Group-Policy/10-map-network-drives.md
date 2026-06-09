@@ -33,8 +33,10 @@ Path: User Configuration > Preferences > Windows Settings > Drive Maps
 
 #### 1. Group Policy Management Editor Configuration
 This screenshot verifies the preference properties, target file paths, and item-level targeting parameters configured on the Primary Domain Controller (DC01).
-![Drive Mapping GPO Configuration](../images/gpo-drives-config.png)
+
+<img src="images/map-drive.jpg" width="70%" />
 
 #### 2. Client-Side Enforcement Verification
 Opening "This PC" on a domain workstation shows the correct network location automatically mapped under Network Locations with the designated drive letter.
-![Client Verification Output](../images/gpo-drives-client-verify.png)
+
+<img src="images/result-map.jpg" width="70%" />
