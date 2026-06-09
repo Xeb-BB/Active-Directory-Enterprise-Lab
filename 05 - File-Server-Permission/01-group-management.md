@@ -39,15 +39,3 @@ This group serves as a primary security principal across the domain's access con
 * **Provisioning:** Membership changes can only be initiated by the CEO or a designated board member, executed exclusively by the Senior Systems Administrator.
 * **Deprovisioning:** Upon executive offboarding, membership is instantly revoked, access tokens are invalidated, and the account is moved directly to the `Disabled Users` OU.
 * **Auditing:** This group is subject to high-priority auditing. Any modifications generate immediate security event triggers (Event ID `4728` / `4729`) within the centralized log infrastructure.
-
----
-
-### Deployment Verification & Screenshots
-
-#### 1. Security Group Object Properties
-This screenshot verifies the object attributes, scope, and container location within Active Directory Users and Computers (ADUC) under the Management tier.
-![GG_MANAGEMENT Object Configuration](../../images/ad-group-management-properties.png)
-
-#### 2. Member Attribute Enumeration
-A view of the Members tab verifying that only the executive-level accounts identified in the system blueprint are active in the group.
-![GG_MANAGEMENT Active Members List](../../images/ad-group-management-members.png)
