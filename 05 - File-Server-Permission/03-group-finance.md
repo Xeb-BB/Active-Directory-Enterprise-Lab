@@ -45,10 +45,8 @@ This group acts as the primary security barrier for financial data, restricting 
 
 ### Deployment Verification & Screenshots
 
-#### 1. Security Group Object Properties
+#### Security Group Object Properties
 This screenshot verifies the object attributes, global scope, and security group type within Active Directory Users and Computers (ADUC).
-![GG_FINANCE Object Configuration](../../images/ad-group-finance-properties.png)
+<img src="images/gg-fin.jpg" width="70%" />
 
-#### 2. Member Attribute Enumeration
-A view of the Members tab confirming that only the designated finance accounts from the domain blueprint are populated.
-![GG_FINANCE Active Members List](../../images/ad-group-finance-members.png)
+
