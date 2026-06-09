@@ -35,4 +35,4 @@ This screenshot verifies the shell restriction configurations and application bl
 
 #### 2. Client-Side Enforcement Verification
 Attempting to launch the Command Prompt or PowerShell on a standard client machine instantly displays an error message stating, "The command prompt has been disabled by your administrator," and automatically terminates the session.
-![Client Verification Output](../images/gpo-cliblock-client-verify.png)
+<img src="images/result-clii.jpg" width="70%" />
