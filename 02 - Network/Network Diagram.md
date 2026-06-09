@@ -25,11 +25,12 @@ The lab is deployed using a physical **Star Topology**, where all endpoints, ser
 
 ### 3. Domain Client Endpoints
 The workstations simulate separate corporate departments on a unified network scheme:
-* **HR-PC01 (`192.168.1.101`)** — Assigned to Human Resources.
-* **FIN-PC01 (`192.168.1.102`)** — Assigned to Finance.
-* **SALES-PC01 (`192.168.1.103`)** — Assigned to Sales.
-* **IT-PC01 (`192.168.1.104`)** — Assigned to IT Support.
+* **SALES-PC01 (`192.168.1.101 - 115`)** — Assigned to Human Resources.
+* **FIN-PC01 (`192.168.1.116 - 120`)** — Assigned to Finance.
+* **HR-PC01 (`192.168.1.121 - 125`)** — Assigned to Sales.
+* **MGMT-PC01 (`192.168.1.130 - 135`)** — Assigned to IT Support.
+* **IT-PC01 (`192.168.1.140 - 145`)** — Assigned to IT Support.
 
 <p align="center">
-  <img src="../Resources/diagram.jpg" alt="Network-Diagram" width="35%">
+  <img src="../Resources/diagram.png" alt="Network-Diagram" width="50%">
 </p>
