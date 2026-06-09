@@ -44,10 +44,7 @@ This group serves as the primary gateway for corporate technical resources. It s
 
 ### Deployment Verification & Screenshots
 
-#### 1. Security Group Object Properties
+#### Security Group Object Properties
 This screenshot verifies the technical team object attributes, global scope, and security group type within Active Directory Users and Computers (ADUC).
-![GG_IT Object Configuration](../../images/ad-group-it-properties.png)
 
-#### 2. Member Attribute Enumeration
-A view of the Members tab confirming that the authorized systems engineering and service desk accounts from the infrastructure blueprint are active.
-![GG_IT Active Members List](../../images/ad-group-it-members.png)
+<img src="images/gg-it.jpg" width="70%" />
