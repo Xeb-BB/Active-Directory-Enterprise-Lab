@@ -29,7 +29,7 @@ The infrastructure utilizes a centralized, flat network design tailored for a sm
 To simulate a real corporate setting, the network includes a dedicated management workstation for administrators alongside separate domain-joined client PCs representing core business departments: Human Resources, Finance, Sales, and Information Technology.
 
 <p align="center">
-  <img src="./Resources/diagram.jpg" alt="Network-Topology" width="35%">
+  <img src="./Resources/diagram.png" alt="Network-Topology" width="50%">
 </p>
 
 ## Active Directory OU Structure
