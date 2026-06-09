@@ -45,10 +45,7 @@ Unlike Group Policy Objects that dictate system behaviors, this group is used ex
 
 ### Deployment Verification & Screenshots
 
-#### 1. Security Group Object Properties
+#### Security Group Object Properties
 This screenshot verifies the object attributes, scope, and container location within Active Directory Users and Computers (ADUC).
-![GG_HR Object Configuration](../../images/ad-group-hr-properties.png)
+<img src="images/gg-hr.jpg" width="70%" />
 
-#### 2. Member Attribute Enumeration
-A view of the Members tab verifying that only the authorized HR accounts identified in the system blueprint are populated.
-![GG_HR Active Members List](../../images/ad-group-hr-members.png)
