@@ -46,10 +46,8 @@ This group isolates high-velocity customer and pipeline information, ensuring sa
 
 ### Deployment Verification & Screenshots
 
-#### 1. Security Group Object Properties
+#### Security Group Object Properties
 This screenshot verifies the object attributes, global scope, and security group type within Active Directory Users and Computers (ADUC) for the Sales tier.
-![GG_SALES Object Configuration](../../images/ad-group-sales-properties.png)
 
-#### 2. Member Attribute Enumeration
-A view of the Members tab verifying that the full sales pipeline roster from the design blueprint is properly mapped.
-![GG_SALES Active Members List](../../images/ad-group-sales-members.png)
+<img src="images/gg-sales.jpg" width="70%" />
+
