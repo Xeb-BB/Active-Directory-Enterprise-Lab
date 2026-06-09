@@ -39,3 +39,5 @@ This group serves as a primary security principal across the domain's access con
 * **Provisioning:** Membership changes can only be initiated by the CEO or a designated board member, executed exclusively by the Senior Systems Administrator.
 * **Deprovisioning:** Upon executive offboarding, membership is instantly revoked, access tokens are invalidated, and the account is moved directly to the `Disabled Users` OU.
 * **Auditing:** This group is subject to high-priority auditing. Any modifications generate immediate security event triggers (Event ID `4728` / `4729`) within the centralized log infrastructure.
+
+  <img src="images/gg-mngmt.jpg" width="70%" />
