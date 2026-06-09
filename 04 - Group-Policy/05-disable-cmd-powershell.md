@@ -31,7 +31,7 @@ Path: User Configuration > Policies > Administrative Templates > System
 
 #### 1. Group Policy Management Editor Configuration
 This screenshot verifies the shell restriction configurations and application block lists configured on the Primary Domain Controller (DC01).
-![CLI Restriction GPO Configuration](../images/gpo-cliblock-config.png)
+<img src="images/disabled-cli.jpg" width="70%" />
 
 #### 2. Client-Side Enforcement Verification
 Attempting to launch the Command Prompt or PowerShell on a standard client machine instantly displays an error message stating, "The command prompt has been disabled by your administrator," and automatically terminates the session.
