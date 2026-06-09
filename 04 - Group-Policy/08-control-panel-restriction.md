@@ -28,8 +28,8 @@ Path: User Configuration > Policies > Administrative Templates > Control Panel
 
 #### 1. Group Policy Management Editor Configuration
 This screenshot verifies the system restriction parameters configured on the Primary Domain Controller (DC01) targeting the Sales OU.
-![Control Panel Restriction GPO Configuration](../images/gpo-controlpanel-config.png)
+<img src="images/panel-block.jpg" width="70%" />
 
 #### 2. Client-Side Enforcement Verification
 Attempting to launch the Control Panel or open Settings on a Sales workstation (e.g., `SALES-PC01`) triggers an error message stating, "This operation has been cancelled due to restrictions in effect on this computer," and immediately blocks access.
-![Client Verification Output](../images/gpo-controlpanel-client-verify.png)
+<img src="images/result-panel.jpg" width="70%" />
