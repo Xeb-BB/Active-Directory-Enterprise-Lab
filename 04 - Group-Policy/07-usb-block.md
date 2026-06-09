@@ -27,10 +27,7 @@ Unrestricted USB ports present two massive enterprise vulnerabilities: **Data Le
 
 ### Deployment Verification & Screenshots
 
-#### 1. Group Policy Management Editor Configuration
+#### Group Policy Management Editor Configuration
 This screenshot verifies the policy parameters as configured on the Primary Domain Controller (`DC01`) targeting the Finance and HR OUs.
-![USB Storage Block GPO Configuration](../images/gpo-usb-config.png)
+<img src="images/usb-block.jpg" width="70%" />
 
-#### 2. Client-Side Enforcement Verification
-Attempting to plug in a USB flash drive on an HR or Finance workstation throws an "Access is denied" error window when the user tries to open it.
-![Client Verification Output](../images/gpo-usb-client-verify.png)
