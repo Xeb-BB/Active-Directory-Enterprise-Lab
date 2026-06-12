@@ -35,10 +35,4 @@ Managed by the File Server Resource Manager (FSRM) role to enforce a clean stora
 
 ### Deployment Verification & Screenshots
 
-#### 1. Overlapping Security Properties (Share vs. NTFS)
-This view confirms that inheritance has been broken on the `E:\Shares\HR-Share` folder path and explicitly locked down to `GG_HR` and `Domain Admins`.
-![HR Share NTFS Security Settings](../images/fs-hr-ntfs-permissions.png)
-
-#### 2. FSRM Active Screen Policy Enforcement
-A screenshot from the File Server Resource Manager dashboard verifying the active blockade of installer assets and multimedia files.
-![FSRM HR Screening Rule](../images/fs-hr-fsrm-screen.png)
+ <img src="images/hr-folder.jpg" width="70%" />
