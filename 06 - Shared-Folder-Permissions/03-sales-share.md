@@ -34,9 +34,4 @@ Mitigates typical phishing vector delivery risks by denying common storage confi
 
 ### Deployment Verification & Screenshots
 
-#### 1. File Share Definition Property Settings
-Confirms that the hidden configuration parameter is applied properly to the SMB share infrastructure on the primary file pool host.
-![Sales SMB Properties](../images/fs-sales-smb-share.png)
-#### 2. FSRM File Screen Violation Event
-Workstation output documenting an absolute transfer error window when dropping a compressed file format payload.
-![Sales FSRM Enforced Catch](../images/fs-sales-fsrm-block.png)
+ <img src="images/sales-folder.jpg" width="70%" />
