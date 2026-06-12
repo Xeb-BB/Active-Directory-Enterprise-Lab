@@ -1,14 +1,14 @@
-# Network Share Configuration: Common Share
+# Network Share Configuration: General Share
 
 This document details the deployment, permissions matrix, and File Server Resource Manager (FSRM) screening baseline for the public collaborative file space.
 
 ---
 
 ### Infrastructure Parameters
-* **Share Name:** `Common$`
-* **Network Path:** `\\DC01\Common$`
+* **Share Name:** `General$`
+* **Network Path:** `\\DC01\General$`
 * **Client Mapping Target:** `G:\ Drive` (Enforced via Group Policy)
-* **Hosting Volume:** `E:\Shares\Common`
+* **Hosting Volume:** `E:\Shares\General`
 
 ---
 
@@ -34,10 +34,4 @@ Because this directory is open to the entire enterprise, it presents the highest
 
 ### Deployment Verification & Screenshots
 
-#### 1. Advanced Security Sharing Settings
-Verification screenshot showing the globally readable collaboration share configuration profile targets on `DC01`.
-![Common Share Security Matrix](../images/fs-common-permissions.png)
-
-#### 2. FSRM File Screen Violation Event
-Workstation confirmation trace proving that iso images or installation binaries cannot be dropped into the general collaborative pool.
-![Common FSRM Enforced Catch](../images/fs-common-fsrm-block.png)
+ <img src="images/it-folder.jpg" width="70%" />
