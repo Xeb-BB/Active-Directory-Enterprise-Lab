@@ -34,10 +34,4 @@ Protects the financial records environment against payload injection, unexpected
 
 ### Deployment Verification & Screenshots
 
-#### 1. Advanced Security Auditing Configuration
-Verifies that access monitoring policies are bound to the `GG_FINANCE` security principal for regulatory data tracking.
-![Finance Security ACL Properties](../images/fs-fin-acl-properties.png)
-
-#### 2. FSRM File Screen Validation Block
-An execution trace proving that dropping an unauthorized `.exe` onto the file mount is instantly dropped by the server system.
-![FSRM Finance Screen Execution](../images/fs-fin-fsrm-block.png)
+ <img src="images/fin-folder.jpg" width="70%" />
