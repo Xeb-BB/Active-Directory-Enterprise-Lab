@@ -87,7 +87,7 @@ To ensure strict data isolation and role-based confidentiality, network file sha
 | **HR Share**<br>`\\DC01\HR-Share$` | GG_HR<br>Domain Admins | Change<br>Modify | **Block Executables & Audio/Video**<br>(`.exe`, `.msi`, `.mp3`, `.mp4`) | **H:\ Drive** — Confidential HR documents and PII. Blocks installation files and personal media. |
 | **Finance Share**<br>`\\DC01\FIN-Share$` | GG_FINANCE<br>Domain Admins | Change<br>Modify | **Block Executables & Image Files**<br>(`.exe`, `.msi`, `.jpg`, `.png`) | **F:\ Drive** — Accounting records. Blocks executable files and unnecessary image/photo files. |
 | **Sales Share**<br>`\\DC01\SALES-Share$` | GG_SALES<br>Domain Admins | Change<br>Modify | **Block Executables & Zip Files**<br>(`.exe`, `.msi`, `.zip`, `.rar`) | **S:\ Drive** — Sales and marketing pipelines. Blocks application setups and compressed archives to mitigate malware risks. |
-| **Common Share**<br>`\\DC01\Common$` | Domain Users<br>Domain Admins | Change<br>Modify | **Block Executables & ISOs**<br>(`.exe`, `.scr`, `.iso`, `.vhd`) | **Public Space** — General collaboration folder. Strictly blocks system images and script files to prevent local malware spreading. |
+| **General Share**<br>`\\DC01\General$` | Domain Users<br>Domain Admins | Change<br>Modify | **Block Executables & ISOs**<br>(`.exe`, `.scr`, `.iso`, `.vhd`) | **Public Space** — General collaboration folder. Strictly blocks system images and script files to prevent local malware spreading. |
 
 ---
 
@@ -121,7 +121,7 @@ graph TD
 ```
 
 
-## 🛠️ Troubleshooting & Issue Resolution Index
+## Troubleshooting & Issue Resolution Index
 
 The following table serves as an operational index of real-world issues encountered and resolved during the lab deployment. Click the links in the **Problem** column to view the full technical root-cause analysis, step-by-step resolutions, and configuration scripts.
 
@@ -146,17 +146,17 @@ The following table serves as an operational index of real-world issues encounte
 Building, securing, and troubleshooting the LionTech Solutions enterprise lab provided invaluable hand-on experience that bridges theoretical system administration with real-world infrastructure operations. Below are the core architectural takeaways from initial setup through to advanced troubleshooting:
 
 ### 1. Identity & Directory Architecture
-* **Planning Over Provisioning:** Designing a scalable Active Directory hierarchy (OUs and Security Groups) *before* touching the server prevents administrative messy drift. Proper naming conventions (like using `GG_` prefixes) make applying permissions predictable and scalable.
-* **The Principle of Least Privilege (PoLP):** Security is not a barrier to productivity; it is an operational standard. Restricting CMD, PowerShell, and local admin access ensures standard users can execute their jobs flawlessly while minimizing the overall attack surface of the organization.
+* Designing a scalable Active Directory hierarchy (OUs and Security Groups) *before* touching the server prevents administrative messy drift. Proper naming conventions (like using `GG_` prefixes) make applying permissions predictable and scalable.
+*  Security is not a barrier to productivity; it is an operational standard. Restricting CMD, PowerShell, and local admin access ensures standard users can execute their jobs flawlessly while minimizing the overall attack surface of the organization.
 
 ### 2. Infrastructure Dependencies
-* **DNS is the Backbone:** In an Active Directory environment, virtually all authentication, communication, and domain-joining issues root back to DNS. If DNS is misconfigured, the entire identity infrastructure breaks. 
-* **Time Synchronization is Crucial:** Kerberos authentication relies heavily on tight time boundaries. Ensuring the Primary Domain Controller synchronizes with a reliable external NTP source is a non-negotiable step to prevent random network-wide authentication drops.
+*  In an Active Directory environment, virtually all authentication, communication, and domain-joining issues root back to DNS. If DNS is misconfigured, the entire identity infrastructure breaks. 
+*  Kerberos authentication relies heavily on tight time boundaries. Ensuring the Primary Domain Controller synchronizes with a reliable external NTP source is a non-negotiable step to prevent random network-wide authentication drops.
 
 ### 3. Policy Enforcement & Operations
-* **Targeting Precision:** Group Policy Objects (GPOs) are incredibly powerful but require precision. A misapplied GPO can easily lock out an entire IT department or cause operational downtime (such as the desktop black-screen bug). Testing GPO scoping and utilizing delegation exclusions are critical sysadmin skills.
-* **Storage and Data Hygiene:** Implementing data restrictions using FSRM prevents corporate storage from being abused by non-work files and serves as an important second layer of defense against accidental malicious script execution on network shares.
+*  Group Policy Objects (GPOs) are incredibly powerful but require precision. A misapplied GPO can easily lock out an entire IT department or cause operational downtime (such as the desktop black-screen bug). Testing GPO scoping and utilizing delegation exclusions are critical sysadmin skills.
+*  Implementing data restrictions using FSRM prevents corporate storage from being abused by non-work files and serves as an important second layer of defense against accidental malicious script execution on network shares.
 
 ### 4. The Mindset of a Systems Administrator
-* **Automation is Mandatory:** Hand-crafting every user and permission is inefficient and prone to human error. Transitioning to repeatable logic (such as standardized onboarding and offboarding workflows) ensures consistency and security compliance.
-* **Documentation is the Real Work:** Building a lab is only half the battle. Documenting the complex failures, logging error codes, and indexing solutions creates an institutional knowledge base that saves hours of downtime during a critical production incident.
+*  Hand-crafting every user and permission is inefficient and prone to human error. Transitioning to repeatable logic (such as standardized onboarding and offboarding workflows) ensures consistency and security compliance.
+*  Building a lab is only half the battle. Documenting the complex failures, logging error codes, and indexing solutions creates an institutional knowledge base that saves hours of downtime during a critical production incident.
