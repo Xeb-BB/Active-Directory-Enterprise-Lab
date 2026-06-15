@@ -45,7 +45,7 @@ The root issue was identified as a **DNS Misconfiguration**. The network adapter
 #### Solutions
 1. Opened the Network Connections control pane (`ncpa.cpl`) on the target client machine.
 2. Modified the IPv4 properties of the active network interface adapter.
-3. Swapped out the automatic public server entry and set it to point **solely** to the static internal IP address of the Domain Controller (`192.168.1.5`).
+3. Swapped out the automatic public server entry and set it to point **solely** to the static internal IP address of the Domain Controller (`192.168.1.10`).
 
 <img src="images/dns-config.jpg" width="70%" />
 
