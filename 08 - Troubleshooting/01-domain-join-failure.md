@@ -11,6 +11,8 @@ The support specialist plugs the workstation into the department's network switc
 
 ---
 
+<img src="images/join-fail.jpg" width="70%" />
+
 ### Ticketing System Log
 
 **LionTech IT Support Portal — Service Ticket**
@@ -36,12 +38,17 @@ The support specialist plugs the workstation into the department's network switc
 During system deployment, the workstation asset `SALES-PC03` failed to join the corporate network infrastructure (`liontech.local`). The client operating system rejected the join configuration, reporting that it could not discover or establish a handshake with the primary Domain Controller (`DC01`).
 
 #### Cause
-The root issue was identified as a **DNS Misconfiguration** (referencing `image_c3c1e2.png`). The network adapter interface on the workstation was configured to pull its primary DNS automatically, defaulting to a public external DNS resolver (`8.8.8.8`). Because public web lookup servers have zero knowledge of private Active Directory namespaces and underlying SRV locator records, the system could not identify the local authority path.
+The root issue was identified as a **DNS Misconfiguration**. The network adapter interface on the workstation was configured to pull its primary DNS automatically, defaulting to a public external DNS resolver (`8.8.8.8`). Because public web lookup servers have zero knowledge of private Active Directory namespaces and underlying SRV locator records, the system could not identify the local authority path.
+
+<img src="images/nslookup-command.jpg" width="70%" />
 
 #### Solutions
 1. Opened the Network Connections control pane (`ncpa.cpl`) on the target client machine.
 2. Modified the IPv4 properties of the active network interface adapter.
-3. Swapped out the automatic public server entry and set it to point **solely** to the static internal IP address of the Domain Controller (`10.0.0.10`).
+3. Swapped out the automatic public server entry and set it to point **solely** to the static internal IP address of the Domain Controller (`192.168.1.5`).
+
+<img src="images/dns-config.jpg" width="70%" />
+
 4. Opened an administrative Command Prompt and purged the local network cache registers:
 ```cmd
    ipconfig /flushdns
@@ -49,16 +56,9 @@ The root issue was identified as a **DNS Misconfiguration** (referencing `image_
 ### How to Capture Deployment Verification Screenshots
 To properly display evidence of your fix in your GitHub project, capture and name the following snapshots:
 
-#### 1. Network Adapter DNS Configuration Properties
-What to capture: Open ncpa.cpl on your client workstation, right-click your network card -> Properties -> double-click Internet Protocol Version 4 (TCP/IPv4).
-
-Focus: Make sure the window clearly shows the "Use the following DNS server addresses" bubble checked, with the IP address box containing your Domain Controller's specific static IP address (e.g., 10.0.0.10).
-
-File Save Path: images/troubleshoot-01-dns-fix.png
-
-#### 2. Domain Membership Success Confirmation
+#### Domain Membership Success Confirmation
 What to capture: Open System Properties (sysdm.cpl) on the client machine after performing the fix.
 
 Focus: Capture the final confirmation dialog pop-up window that explicitly reads: "Welcome to the liontech.local domain."
 
-File Save Path: images/troubleshoot-01-domain-success.png
+<img src="images/domain-success.jpg" width="70%" />
