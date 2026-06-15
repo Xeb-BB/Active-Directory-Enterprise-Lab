@@ -1,13 +1,13 @@
-# Troubleshooting Case Study #2: GPO Changes Not Applying
+# Troubleshooting Case Study #2: Sales Department Network Drive Failure
 
-This entry covers the diagnostic workflow, policy processing analysis, and remediation steps applied to resolve a failure where new Group Policy settings were not taking effect on a user endpoint.
+This entry covers the diagnostic workflow, policy processing analysis, and security permission remediation applied to resolve an infrastructure deployment failure where the **Sales-Folder** network drive failed to map onto user endpoints.
 
 ---
 
 ### The Real-World Scenario
-An IT Administrator has configured a critical security wallpaper policy to apply across the enterprise. The change is intended for John Smith (`finance01`), a Senior Accountant working in the Finance department on workstation `FIN-PC01`. 
+As part of the production rollout for **LionTech Solutions Pte Ltd**, a centralized Group Policy Object (GPO) named `Map Drive` was deployed to automatically mount the shared **Sales-Folder** to the `S:` drive for all Sales personnel. 
 
-Despite several reboots and hours of waiting, John reports that his desktop environment remains unchanged and still shows the default Windows background. The administrator attempts to manually trigger the policy pull from the client machine, but the security workspace updates refuse to take effect. The system baseline appears to be ignoring the new compliance policies completely.
+However, when users like `sales01` log into workstation `SALES`, the deployment fails. For some users, the **S:** drive is completely missing from File Explorer. For others, the drive appears but displays a critical **Red X** icon, throwing an *"Access is Denied"* error when clicked. The Sales team is currently unable to access centralized files, halting business operations.
 
 ---
 
@@ -16,55 +16,50 @@ Despite several reboots and hours of waiting, John reports that his desktop envi
 **LionTech IT Support Portal — Service Ticket**
 
 * **Ticket ID:** TS-2026-002
-* **Priority:** Low
+* **Priority:** High
 * **Assigned Engineer:** `sysadmin01` (Senior Systems Administrator)
-* **Requesting User:** `finance01` (John Smith)
-* **Department:** Finance Department
-* **Affected Asset ID:** `FIN-PC01`
+* **Requesting User:** Sales Team
+* **Department:** Sales
+* **Affected Asset ID:** `SALES`
 
 | Timestamp | Submitter | Log / Action Notes |
 | :--- | :--- | :--- |
-| `2026-06-05 10:15` | `sysadmin01` | **Ticket Opened.** User reports corporate security wallpaper updates are not reflecting on `FIN-PC01`. |
-| `2026-06-05 10:40` | `sysadmin01` | **Diagnostic Run.** Generated a Group Policy results report (`gpresult /h`). Found that the Wallpaper Policy GPO is being completely ignored by the client workstation during evaluation. |
-| `2026-06-05 11:05` | `sysadmin01` | **Root Cause Analysis.** Discovered that the GPO was mistakenly linked to the Computers OU, even though the policy itself contains User Configuration settings. Relinked the object to the Finance Users OU and forced a policy update. Ticket closed. |
+| `2026-06-15 09:15` | `sysadmin01` | **Ticket Opened.** Users report the **Sales-Folder** (`S:`) drive is either missing or inaccessible with a Red X error. |
+| `2026-06-15 09:45` | `sysadmin01` | **Diagnostic Run.** Analyzed GPO Preferences. Found that Item-Level Targeting was checking for the **Sales OU** instead of the **GG_SALES** security group, causing the mapping to fail for users in different OU paths. |
+| `2026-06-15 10:15` | `sysadmin01` | **Root Cause Analysis.** Identified that while the share was created, the **Security (NTFS)** tab on the server was missing the **GG_SALES** group, resulting in the "Access Denied" Red X. |
+| `2026-06-15 11:00` | `sysadmin01` | **Remediation.** Updated targeting to reference the **GG_SALES** Security Group and added **Modify** NTFS permissions to the physical folder. Verified fix on client. Ticket closed. |
 
 ---
 
 ### Technical Documentation
 
 #### Problem
-New environmental configurations applied via Group Policy Objects (GPOs) were completely failing to deploy to the end-user profile on workstation `FIN-PC01`. Manually attempting to pull down active directory changes on the terminal interface resulted in a success message, yet the localized environment properties remained entirely unmodified.
+The **Sales-Folder** failed to map correctly to user profiles on `SALES`. The system either skipped the mapping entirely or displayed it as a broken connection (Red X).
 
 #### Cause
-The issue was identified as a **Targeting Mismatch** (referencing `image_c3c1e2.png`). The Group Policy Object was linked directly to a Computer Organizational Unit (OU) container. However, the policy itself contained only configurations modified under the **User Configuration** node (Desktop Wallpaper management). Because computer objects do not process User configuration trees from GPOs linked directly to their own structural containers, the policy was effectively orphaned and bypassed by the evaluation engine.
+1. **Targeting Mismatch:** The GPO used **Item-Level Targeting** based on the user's location in the **Sales OU**. Because the GPO was linked to the **Workstations OU** (a computer container), evaluating cross-OU user paths caused the mapping logic to fail.
+2. **Missing NTFS Permissions:** The physical folder on the server lacked the necessary **Modify** permissions for the **GG_SALES** group on the **Security** tab, even though the network **Sharing** tab was configured correctly.
 
 #### Solutions
-1. Opened the **Group Policy Management Console** (`gpmc.msc`) on the domain controller (`DC01`).
-2. Located the misconfigured link under the `Computers` OU structure.
-3. Right-clicked the rogue link and selected **Delete** (removing the link location, not the GPO itself).
-4. Navigated down the structure to the target **Finance Users OU** where the active user account (`finance01`) resides.
-5. Right-clicked the OU container, selected **Link an Existing GPO**, and mapped the target wallpaper management policy object.
-6. Switched to the client machine (`FIN-PC01`), opened an administrative Command Prompt, and forced an instant background policy refresh:
-```cmd
-   gpupdate /force
-```
-#### Evidence
-PICTURE
+1. Opened the `Map Drive` GPO on the **Domain Controller (DC01)**.
+2. Navigated to `User Configuration` > `Preferences` > `Windows Settings` > `Drive Maps`.
+3. Edited the **Sales-Folder** properties and went to the **Common** tab > **Targeting...**.
+4. Removed the old **Organizational Unit** rule and replaced it with a **Security Group** rule targeting **`LIONTECH\GG_SALES`**.
+5. On the file server, right-clicked the physical **Sales-Folder**, went to the **Security** tab, and added **GG_SALES** with **Modify** permissions.
+6. Instructed the user to **Sign Out** and **Sign In** to refresh their security tokens and pull the updated GPO configuration.
 
 ---
-### Deployment Verification Screenshots
-To properly display evidence of your fix in your GitHub project, capture and name the following snapshots:
 
-#### 1. Group Policy Management Console Alignment
-What to capture: Open gpmc.msc on your Domain Controller. Expand your forest and domain trees.
+### Deployment Verification Evidence
 
-Focus: Capture the navigation hierarchy pane clearly showing your target Group Policy Object linked safely beneath your User-based Organizational Unit (e.g., Finance or Human Resources users OU) instead of a Computer OU container.
+To verify successful remediation of the network storage mapping architecture, the following engineering artifacts were captured from the deployment environment:
 
-File Save Path: images/troubleshoot-02-gpo-link.png
+#### 1. Corrected Item-Level Targeting Configuration
+The mapping preference logic was updated to evaluate user identity tokens (Security Group Memberships) rather than folder structural boundaries.
 
-#### 2. Client Side GPResult Execution Trace
-What to capture: Open a Command Prompt window on the client machine after running your update sequence. Type gpresult /r and press Enter.
+![GPO Drive Map Security Group Targeting](images/troubleshoot-02-targeting-fix.png)
 
-Focus: Scroll to the "Applied Group Policies" header under the User Configuration section. Capture the terminal screen proving that your target policy object is now explicitly listed as successfully applied.
+#### 2. Successful Drive Mount & Data Visibility
+Upon user session initialization, the client workstation properly evaluates the Active Directory group token, maps the assigned letter path, and securely opens the file structure with no permission conflicts.
 
-File Save Path: images/troubleshoot-02-gpresult-success.png
+![Successful Shared Drive Deployment](images/troubleshoot-02-sales-drive-success.png)
