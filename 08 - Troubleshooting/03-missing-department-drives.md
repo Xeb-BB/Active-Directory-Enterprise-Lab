@@ -48,19 +48,3 @@ The root issue was identified as a **GPO Security Filtering** error (referencing
 ```cmd
    gpupdate /force
 ```
-### Deployment Verification & Screenshots
-To properly display evidence of your fix in your GitHub project, capture and name the following snapshots:
-
-#### 1. Group Policy Delegation Configuration Panel
-What to capture: Open gpmc.msc on the Domain Controller, highlight your target drive-mapping policy object, and select the Delegation tab.
-
-Focus: Ensure the panel explicitly displays the Domain Computers group listed in the permissions summary list with Read access verified.
-
-File Save Path: images/troubleshoot-03-delegation-fix.png
-
-#### 2. Network Mapping Verification (File Explorer)
-What to capture: Open This PC or File Explorer on the target user's desktop workstation after running the manual policy pull.
-
-Focus: Capture the "Network locations" pane showing both the common storage volume and the newly mounted department secure drive mapping (S:) pointing directly to \\DC01\SALES-Share$.
-
-File Save Path: images/troubleshoot-03-drives-restored.png
