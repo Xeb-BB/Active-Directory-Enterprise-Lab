@@ -55,15 +55,4 @@ The following administrative event trace captures the exact security audit recor
 ##### picture of event viewer
 
 ---
-### Deployment Verification & Screenshots
-#### 1. Windows Credential Vault Cleansing Management
-Open the **Credential Manager** interface window via the local Control Panel on the client machine. Click into the **Windows Credentials** view pane.
-Capture the window showing the target network storage credentials or generic tokens expanded, with the "Remove" button link visible, confirming where the stale entries are cleared out.
-* **File Save Path:** `images/troubleshoot-08-vault-clear.png`
-![Windows Credential Vault Cleansing Management](../../images/troubleshoot-08-vault-clear.png)
 
-#### 2. Clean Active Directory Status Verification
-Open Active Directory Users and Computers on the Domain Controller and view the **Account** tab under properties for the affected user profile (`finance02`).
-Ensure that the checkbox option **"Unlock account. This account is currently locked out on this Active Directory Domain Controller"** is completely blank and cleared out, showing an active status.
-* **File Save Path:** `images/troubleshoot-08-ad-unlocked.png`
-![Clean Active Directory Status Verification](../../images/troubleshoot-08-ad-unlocked.png)
