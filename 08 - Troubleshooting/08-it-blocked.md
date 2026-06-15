@@ -53,20 +53,3 @@ The root issue was identified as a **GPO Scope Error** (referencing `image_c3c1e
 ```cmd
    gpupdate /force
 ```
----
-### Deployment Verification & Screenshots
-To properly display evidence of your fix in your GitHub project, capture and name the following snapshots:
-
-#### 1. Group Policy Advanced Delegation ACL Matrix
-What to capture: Open gpmc.msc on the Domain Controller, choose your user restriction policy, click Delegation -> Advanced. Select the GG_IT group entry.
-
-Focus: Ensure the permissions box is clearly visible, showing the Deny checkbox explicitly checked for the Apply Group Policy permission node.
-
-File Save Path: images/troubleshoot-08-gpo-deny.png
-
-#### 2. Restored Console Execution Verification
-What to capture: Take a full screenshot of the IT administrator's desktop client (IT-ADM02) showing both an open Command Prompt window and a PowerShell window functioning simultaneously.
-
-Focus: Ensure the windows display successful command responses (such as a clean whoami or hostname output) without triggering policy restriction error windows.
-
-File Save Path: images/troubleshoot-08-terminal-restored.png
