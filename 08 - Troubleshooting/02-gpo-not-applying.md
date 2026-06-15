@@ -49,17 +49,3 @@ The **Sales-Folder** failed to map correctly to user profiles on `SALES`. The sy
 6. Instructed the user to **Sign Out** and **Sign In** to refresh their security tokens and pull the updated GPO configuration.
 
 ---
-
-### Deployment Verification Evidence
-
-To verify successful remediation of the network storage mapping architecture, the following engineering artifacts were captured from the deployment environment:
-
-#### 1. Corrected Item-Level Targeting Configuration
-The mapping preference logic was updated to evaluate user identity tokens (Security Group Memberships) rather than folder structural boundaries.
-
-![GPO Drive Map Security Group Targeting](images/troubleshoot-02-targeting-fix.png)
-
-#### 2. Successful Drive Mount & Data Visibility
-Upon user session initialization, the client workstation properly evaluates the Active Directory group token, maps the assigned letter path, and securely opens the file structure with no permission conflicts.
-
-![Successful Shared Drive Deployment](images/troubleshoot-02-sales-drive-success.png)
