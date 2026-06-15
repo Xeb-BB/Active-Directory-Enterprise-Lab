@@ -46,19 +46,3 @@ The root issue was determined to be a **Stale Kerberos Token** (referencing `ima
 ```cmd
    klist purge
 ```
-### Deployment Verification & Screenshots
-To properly display evidence of your fix in your GitHub project, capture and name the following snapshots:
-
-#### 1. Group Membership Authorization Validation (Terminal)
-What to capture: Open a Command Prompt window on the user's client machine after they sign back into the desktop. Type whoami /groups and execute.
-
-Focus: Ensure the terminal output clearly lists the new departmental management group (GG_HR_Managers or similar) in the list of active tokens, proving that the Kerberos ticket successfully updated.
-
-File Save Path: images/troubleshoot-04-token-verify.png
-
-#### 2. Restored Folder Path Access
-What to capture: Open Windows File Explorer on the client workstation and browse directly to the secure UNC file share path (\\DC01\HR-Private$).
-
-Focus: Capture the interior directory window cleanly listing the confidential management files without throwing an "Access Denied" error prompt.
-
-File Save Path: images/troubleshoot-04-access-restored.png
