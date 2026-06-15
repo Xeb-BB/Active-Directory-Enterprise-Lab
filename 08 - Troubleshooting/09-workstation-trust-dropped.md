@@ -47,19 +47,3 @@ The root issue was identified as a **Kerberos Time Skew** error (referencing `im
    w32tm /config /manualpeerlist:"pool.ntp.org" /syncfromflags:manual /reliable:yes /update
 ```
 ---
-### Deployment Verification & Screenshots
-To properly display evidence of your fix in your GitHub project, capture and name the following snapshots:
-
-#### 1. Windows Time Diagnostic System Synchronization Track
-What to capture: Open an administrative Command Prompt on your client machine after the repair sequence. Type w32tm /query /status and execute.
-
-Focus: Ensure the output text fields clearly show the Leap Indicator reading 0 (no error), and the Source field explicitly matching your target Domain Controller (DC01.liontech.local).
-
-File Save Path: images/troubleshoot-09-w32tm-status.png
-
-#### 2. Secure Channel Verification Status Confirmation
-What to capture: Open a Command Prompt window on the client workstation and execute the secure channel test command: nltest /sc_query:liontech.local.
-
-Focus: Verify that the console screen output reads "Connection Status = 0 0x0 NERR_Success" alongside the matching name parameter string of your primary DC server.
-
-File Save Path: images/troubleshoot-09-trust-verified.png
