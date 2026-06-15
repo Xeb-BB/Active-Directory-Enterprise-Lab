@@ -49,23 +49,3 @@ The root issue was identified as **Aggressive Pattern Matching** within File Ser
 7. Clicked **OK** to commit the template pattern across active file screen pathways.
 8. Instructed the user to re-attempt the upload transaction.
 
-#### Evidence
-1. dsfdf
-
----
-Deployment Verification & Screenshots
-To properly display evidence of your fix in your GitHub project, capture and name the following snapshots:
-
-1. FSRM File Group Pattern Alignment
-What to capture: Open File Server Resource Manager (fsrm.msc) on the storage controller server, browse to File Groups, and open the specific group properties block.
-
-Focus: Ensure the properties dialog window is visible, showing that the "Files to include" list explicitly contains the strict trailing assignment *.exe and lacks any greedy *.exe* wildcards.
-
-File Save Path: images/troubleshoot-07-fsrm-fix.png
-
-2. Network Mapping Verification (File Explorer)
-What to capture: Open a Windows File Explorer view inside the destination share folder (\\DC01\HR-Share$) from the user's desktop screen.
-
-Focus: Verify that the file Resume_Draft.exe.pdf is successfully residing inside the network repository folder with its native icon rendering properly.
-
-File Save Path: images/troubleshoot-07-upload-success.png
