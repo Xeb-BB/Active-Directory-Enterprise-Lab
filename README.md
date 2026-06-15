@@ -160,3 +160,27 @@ Building, securing, and troubleshooting the LionTech Solutions enterprise lab pr
 ### 4. The Mindset of a Systems Administrator
 *  Hand-crafting every user and permission is inefficient and prone to human error. Transitioning to repeatable logic (such as standardized onboarding and offboarding workflows) ensures consistency and security compliance.
 *  Building a lab is only half the battle. Documenting the complex failures, logging error codes, and indexing solutions creates an institutional knowledge base that saves hours of downtime during a critical production incident.
+
+
+---
+
+## Author
+
+### Jhon Benedict Enriquez
+
+> **Aspiring IT Support Specialist | Network Engineer | System Administration**
+>
+> This repository represents my continuous learning journey and serves as a technical portfolio documenting hands-on experience in networking, infrastructure, and enterprise technologies.
+
+#### Currently Learning
+
+- Windows Server & Active Directory
+- Cisco Networking and CCNA 
+- Microsoft 365 and Azure Fundamentals
+- Linux Essentials
+- Infrastructure Troubleshooting
+
+---
+
+*"Bridging theoretical knowledge with practical experience through continuous learning and hands-on projects."*
+
