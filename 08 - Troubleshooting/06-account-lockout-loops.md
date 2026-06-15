@@ -48,11 +48,5 @@ The root issue was identified as a **Saved Stale Credential** inside the endpoin
 6. Expanded each old entry and clicked **Remove** to wipe the stale credentials from the Windows Vault cache layers.
 7. Reconnected the network cable to the workstation and prompted the user to access a shared drive path to force a fresh, compliant login handshake.
 
-#### Evidence
-The following administrative event trace captures the exact security audit record generated on the Domain Controller, pinpointing the caller computer executing the bad transactions:
-
-* **Before Fix (Domain Controller Event Viewer Security Log — Event ID 4740):**
-##### picture of event viewer
-
 ---
 
